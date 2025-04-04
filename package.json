@@ -1,18 +1,18 @@
 {
-  "name": "VAC_Cheker",
-  "version": "1.0.0",
+  "name": "SteamBansCheck",
+  "version": "1.1.0",
   "main": "index.js",
   "bin": "index.js",
   "author": "Roscom",
   "license": "MIT",
   "scripts": {
-    "start": "node .",
     "build": "pkg index.js --target node18-win-x64 --output Checker.exe"
   },
   "dependencies": {
-    "@inquirer/prompts": "^7.4.0",
     "axios": "^1.8.4",
-    "cli-progress": "^3.12.0"
+    "cli-progress": "^3.12.0",
+    "colors": "^1.4.0",
+    "inquirer": "^12.5.0"
   },
   "pkg": {
     "scripts": [

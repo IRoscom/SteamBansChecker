@@ -1,4 +1,4 @@
-const { isAbsolute, join } = require("path");
+const { isAbsolute, join, dirname } = require("path");
 
 /**
  * @param {String} input
@@ -9,6 +9,6 @@ module.exports = (input) => {
   if (isAbsolute(input)) {
     return input;
   } else {
-    return join(process.cwd(), input);
+    return join(dirname(process.execPath), input);
   }
 };

@@ -1,5 +1,4 @@
 const axios = require("axios/dist/node/axios.cjs");
-// const { default: axios } = require("axios");
 
 module.exports = class Steam {
   constructor(key) {
@@ -45,11 +44,22 @@ module.exports = class Steam {
       .get(url, { params: { key: this.key, vanityurl } })
       .then((result) => result.data?.response);
   }
-
+  /**
+   * @typedef {Object} Options
+   * @property {String} intefrace
+   * @property {String} method
+   * @property {Number} version
+   * @param {Options} param0
+   * @returns {URL}
+   */
   createURL({ intefrace, method, version }) {
     return new URL(`${this.endpoint}/${intefrace}/${method}/v${version}/`);
   }
 
+  /**
+   * @param {String} id
+   * @returns {String}
+   */
   createProfileURL(id) {
     return "https://steamcommunity.com/profiles/" + id;
   }

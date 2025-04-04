@@ -1,8 +1,9 @@
-const { profiles, vanity } = require("./RegExp");
+const { profiles, vanity } = require("../../models/RegExp");
 
 /**
  * @param {String} url
- * @param {import('../class/Steam')} steam
+ * @param {import('../../core/Steam')} steam
+ * @returns {String}
  */
 module.exports = async (url, steam) => {
   const profilesMatch = url.match(profiles);
